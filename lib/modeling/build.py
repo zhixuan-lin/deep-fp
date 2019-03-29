@@ -3,7 +3,8 @@ from lib.modeling.classifier.dfnet import DFNetFrontEnd
 
 
 def make_model(cfg):
-    return DFNetFrontEnd(cfg)
+    backbone = make_backbone(cfg)
+    return DFNetFrontEnd(backbone)
 
 def make_backbone(cfg):
     return DFNet(cfg.MODEL.CLASSES)

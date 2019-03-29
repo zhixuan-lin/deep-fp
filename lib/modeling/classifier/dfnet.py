@@ -1,10 +1,11 @@
 import torch
-from ..build import make_backbone
+from torch import nn
 from torch.nn import CrossEntropyLoss
 
-class DFNetFrontEnd:
-    def __init__(self, cfg):
-        self.backbone = make_backbone(cfg)
+class DFNetFrontEnd(nn.Module):
+    def __init__(self, backbone):
+        nn.Module.__init__(self)
+        self.backbone = backbone
         self.criterion =  CrossEntropyLoss()
         
     def forward(self, x, targets):

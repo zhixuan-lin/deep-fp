@@ -7,7 +7,7 @@ import torch.distributed as dist
 from ..utils.metric_logger import MetricLogger
 
 
-def do_train(
+def train(
     model,
     data_loader,
     optimizer,
@@ -19,7 +19,7 @@ def do_train(
     arguments,
 ):
     print("Start training")
-    meters = MetricLogger()
+    meters = MetricLogger(", ")
     # max_iter = len(data_loader)
     start_iter = arguments["iteration"]
     max_iter = max_epochs * len(data_loader)
@@ -32,7 +32,7 @@ def do_train(
     
     for iteration, (data, targets) in enumerate(data_loader, start_iter):
         # compute epoch num
-        epoch = iteration / len(data_loader) + 1
+        epoch = iteration // len(data_loader) + 1
         if epoch > max_epochs:
             checkpointer.save("model_final", **arguments)
             break
@@ -50,17 +50,17 @@ def do_train(
         # batch training
         # put data to device
         data = data.to(device)
-        targets = {k: v.to(device) for k, v in targets.items()}
+        targets = targets.to(device)
         
         # get losses
-        loss_dict = model(data, targets)
+        loss = model(data, targets)
         
         # sum all losses for bp
-        losses = sum(loss for loss in loss_dict.values())
-        meters.update(loss=losses, **loss_dict)
+        # losses = sum(loss for loss in loss_dict.values())
+        meters.update(loss=loss)
         
         optimizer.zero_grad()
-        losses.backward()
+        loss.backward()
         optimizer.step()
         
         # time for one iteration

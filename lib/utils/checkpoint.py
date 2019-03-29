@@ -1,4 +1,6 @@
 import os
+import pickle
+
 import torch
 
 class Checkpointer:
@@ -37,7 +39,7 @@ class Checkpointer:
         
         save_file = os.path.join(self.save_dir, '{}.pth'.format(name))
         torch.save(data, save_file)
-        self.tag_last_checkpoint(save_file)
+        self.update_checkpoint(save_file)
     
     def load(self, f=None):
         if self.has_checkpoint():
@@ -67,28 +69,34 @@ class Checkpointer:
     def has_checkpoint(self):
         # if there is at least one checkpoint, the file 'last_checkpoint' will
         # exist
-        save_file = os.path.join(self.save_dir, 'last_checkpoint')
+        save_file = os.path.join(self.save_dir, 'checkpoint.pkl')
         return os.path.exists(save_file)
     
     def get_checkpoint_file(self):
-        save_file = os.path.join(self.save_dir, 'last_checkpoint')
-        # return last checkpoint name
-        return open(save_file).read().strip()
+        save_file = os.path.join(self.save_dir, 'checkpoint.pkl')
+        checkpoints = pickle.load(open(save_file, 'rb'))
+        last_saved = os.path.join(self.save_dir, checkpoints[-1])
     
-    def tag_last_checkpoint(self, last_filename):
-        """
-        Tag the last checkpoint file 'last_filename' to a text file
-        'last_checkpoint'
-        """
-        save_file = os.path.join(self.save_dir, 'last_checkpoint')
-        with open(save_file, 'w') as f:
-            f.write(last_filename)
+    def update_checkpoint(self, last_filename):
+        save_file = os.path.join(self.save_dir, 'checkpoint.pkl')
+        if os.path.exists(save_file):
+            checkpoints = pickle.load(open(save_file, 'rb'))
+        else:
+            checkpoints = []
             
+        checkpoints.append(os.path.basename(last_filename))
+        if len(checkpoints) > self.cfg.TRAIN.NUM_CHECKPOINT:
+            checkpoint_name = checkpoints.pop(0)
+            checkpoint = os.path.join(self.save_dir, checkpoint_name)
+            if os.path.exists(checkpoint) and checkpoint_name not in checkpoints:
+                os.remove(checkpoint)
+        pickle.dump(checkpoints, open(save_file, 'wb'))
+        
     def _load_file(self, f):
         return torch.load(f, map_location=torch.device('cpu'))
     
     def _load_model(self, checkpoint):
-        torch.load_state_dict(self.model, checkpoint)
+        torch.load_state_dict(self.model, checkpoint.pop('model'))
         
     
         
