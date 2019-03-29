@@ -13,6 +13,7 @@ _C = CN()
 # MODEL
 # -----------------------------------------------------------------------------
 _C.MODEL = CN()
+_C.MODEL_CLASSES = 100
 # _C.MODEL.NAME = "descriptor-space"
 # _C.MODEL.DEVICE = "cuda"
 # _C.MODEL.TARGET = "FLOW"
