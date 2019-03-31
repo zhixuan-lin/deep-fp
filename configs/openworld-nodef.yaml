@@ -1,0 +1,24 @@
+MODEL:
+  NAME: "dfnet"
+  # test model?
+  TEST: False
+  CLASSES: 96
+  DEVICE: "cuda"
+  # use multiple gpus?
+  PARALLEL: False
+
+DATASET:
+  TRAIN: "OpenWorldNoDef.train"
+  VAL: "OpenWorldNoDef.val"
+  TEST: "OpenWorldNoDef.test_mon"
+
+TRAIN:
+  RESUME: True
+  MAX_EPOCHS: 30
+  BATCH_SIZE: 64
+  CHECKPOINT_PERIOD: 2500
+
+TEST:
+  BATCH_SIZE: 1
+
+MODEL_DIR: "data/model"

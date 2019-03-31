@@ -10,6 +10,12 @@ from yacs.config import CfgNode as CN
 _C = CN()
 
 # -----------------------------------------------------------------------------
+# EXP
+# -----------------------------------------------------------------------------
+_C.EXP = CN()
+_C.EXP.NAME = 'OpenWorldNoDef'
+
+# -----------------------------------------------------------------------------
 # MODEL
 # -----------------------------------------------------------------------------
 _C.MODEL = CN()
@@ -34,8 +40,9 @@ _C.PATH.DATA_DIR = os.path.join(_C.PATH.ROOT_DIR, 'data')
 # DATASET
 # -----------------------------------------------------------------------------
 _C.DATASET = CN()
-_C.DATASET.TRAIN = 'OpenWorldNoDefTrain'
-_C.DATASET.TEST = 'OpenWorldNoDefTest'
+_C.DATASET.TRAIN = 'OpenWorldNoDef.train'
+_C.DATASET.VAL = 'OpenWorldNoDef.val'
+_C.DATASET.TEST = 'OpenWorldNoDef.test_mon'
 
 
 # -----------------------------------------------------------------------------
@@ -95,4 +102,16 @@ _C.TEST.BATCH_SIZE = 1
 # ---------------------------------------------------------------------------- #
 
 # default model saving directory
-_C.MODEL_DIR = os.path.join(_C.PATH.DATA_DIR, "model")
+_C.MODEL_DIR = os.path.join(_C.PATH.DATA_DIR, "model", _C.EXP.NAME)
+
+
+# ---------------------------------------------------------------------------- #
+# Path setups
+# ---------------------------------------------------------------------------- #
+import sys
+import os
+if _C.PATH.ROOT_DIR not in sys.path:
+    sys.path.append(_C.PATH.ROOT_DIR)
+    
+if not os.path.exists(_C.MODEL_DIR):
+    os.makedirs(_C.MODEL_DIR)

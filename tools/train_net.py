@@ -1,3 +1,4 @@
+import argparse
 import sys
 if '.' not in sys.path:
     sys.path.insert(0, '.')
@@ -62,6 +63,24 @@ def train_net(cfg):
     return model
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--config-file',
+        default='',
+        help='Path to config file',
+        type=str
+    )
+    parser.add_argument(
+        'opts',
+        help="Modify config options using the command line",
+        default=None,
+        nargs=argparse.REMAINDER
+    )
+    args = parser.parse_args()
+    cfg.merge_from_file(args.config_file)
+    cfg.merge_from_list(args.opts)
+    cfg.freeze()
+    
     train_net(cfg)
     
 if __name__ == '__main__':
