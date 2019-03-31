@@ -3,7 +3,7 @@ MODEL:
   # test model?
   TEST: False
   CLASSES: 96
-  DEVICE: "cuda"
+  DEVICE: "cpu"
   # use multiple gpus?
   PARALLEL: False
 
@@ -15,7 +15,7 @@ DATASET:
 TRAIN:
   RESUME: True
   MAX_EPOCHS: 30
-  BATCH_SIZE: 64
+  BATCH_SIZE: 2
   CHECKPOINT_PERIOD: 2500
 
 TEST:

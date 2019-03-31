@@ -32,6 +32,7 @@ def train_net(cfg):
     # make arguments that should be checkpointed
     arguments = {}
     arguments['iteration'] = 0
+    arguments['epoch'] = 0
 
     # checkpoint directory
     output_dir = cfg.MODEL_DIR
