@@ -21,9 +21,8 @@ def test(model, device, dataloader, evaluator):
         targets = targets.to(device)
         results = model(data)
         evaluator.evaluate(data, targets, results)
-        i += 1
-        if i > 50:
-            break
+        print(i)
+        i+=1
         
     return evaluator.results()
     
