@@ -5,6 +5,7 @@ import time
 import torch
 import torch.distributed as dist
 from ..utils.metric_logger import MetricLogger
+from .eval import test
 
 
 def train(
@@ -17,6 +18,9 @@ def train(
     checkpoint_period,
     max_epochs,
     arguments,
+    
+    dataloader_val=None,
+    evaluator=None
 ):
     print("Start training")
     meters = MetricLogger(", ")
@@ -28,14 +32,13 @@ def train(
     # end: the end time of last iteration
     end = time.time()
 
-    model.train()
     first = True
     for epoch in range(start_epoch, max_epochs):
         arguments['epoch'] = epoch
+        model.train()
         
         # starting from where we drop
         enumerator = enumerate(data_loader, start_iter if first else 0)
-    
         for iteration, (data, targets) in enumerator:
             # this is necessary for ensure the right number of epochs
             if iteration >= max_iter:
@@ -103,6 +106,12 @@ def train(
             if iteration % checkpoint_period == 0:
                 checkpointer.save("model_{:05d}_{:07d}".format(epoch, iteration), **arguments)
                 
+        # evaluate result after each epoch
+        if not evaluator is None and not dataloader_val is None:
+            results = test(model, device, dataloader_val, evaluator)
+            print(**results)
+            
+            
             
     total_training_time = time.time() - start_training_time
     total_time_str = str(datetime.timedelta(seconds=total_training_time))

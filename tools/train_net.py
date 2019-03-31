@@ -27,7 +27,7 @@ def train_net(cfg):
         model = torch.nn.DataParallel(model)
     
     # make dataloader
-    dataloader = make_dataloader(cfg)
+    dataloader = make_dataloader(cfg, mode='train')
     
     # make arguments that should be checkpointed
     arguments = {}
@@ -48,6 +48,12 @@ def train_net(cfg):
     
     # max epochs
     max_epochs = cfg.TRAIN.MAX_EPOCHS
+    
+    # validation settings
+    dataloader_val = None
+    evaluator = None
+    if cfg.VAL.IS_ON:
+        dataloader_val = make_dataloader(cfg, mode='val')
     
     train(
         model,

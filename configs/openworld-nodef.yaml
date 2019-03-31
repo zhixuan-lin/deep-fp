@@ -1,3 +1,7 @@
+EXP:
+  # this will be used for logging and model saving
+  NAME: "OpenWorldNoDef"
+
 MODEL:
   NAME: "dfnet"
   # test model?
@@ -15,8 +19,13 @@ DATASET:
 TRAIN:
   RESUME: True
   MAX_EPOCHS: 30
-  BATCH_SIZE: 2
+  BATCH_SIZE: 64
+  # checkpoint every ? iterations
   CHECKPOINT_PERIOD: 2500
+
+VAL:
+  IS_ON: True
+  BATCH_SIZE: 1
 
 TEST:
   BATCH_SIZE: 1

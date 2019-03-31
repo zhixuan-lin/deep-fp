@@ -78,6 +78,14 @@ _C.TRAIN.GAMMA = 0.1
 _C.TRAIN.CHECKPOINT_PERIOD = 2500
 _C.TRAIN.NUM_CHECKPOINT = 10
 
+# ---------------------------------------------------------------------------- #
+# Validation settings
+# ---------------------------------------------------------------------------- #
+_C.VAL = CN()
+
+# resume training?
+_C.VAL.IS_ON = True
+_C.VAL.BATCH_SIZE = 1
 
 # ---------------------------------------------------------------------------- #
 # Specific test options
