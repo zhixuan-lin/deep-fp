@@ -92,6 +92,7 @@ _C.VAL.BATCH_SIZE = 1
 # ---------------------------------------------------------------------------- #
 _C.TEST = CN()
 _C.TEST.BATCH_SIZE = 1
+_C.TEST.METRIC = 'ACC'
 
 
 # ---------------------------------------------------------------------------- #
@@ -102,7 +103,7 @@ _C.TENSORBOARD.IS_ON = True
 _C.TENSORBOARD.TARGETS = CN()
 _C.TENSORBOARD.TARGETS.SCALAR = ["loss", "accuracy"]
 _C.TENSORBOARD.TARGETS.IMAGE = []
-_C.TENSORBOARD.LOG_DIR = os.path.join(_C.PATH.ROOT_DIR, "logs", _C.EXP.NAME)
+_C.TENSORBOARD.LOG_DIR = os.path.join(_C.PATH.ROOT_DIR, "logs")
 
 
 # ---------------------------------------------------------------------------- #
@@ -110,7 +111,7 @@ _C.TENSORBOARD.LOG_DIR = os.path.join(_C.PATH.ROOT_DIR, "logs", _C.EXP.NAME)
 # ---------------------------------------------------------------------------- #
 
 # default model saving directory
-_C.MODEL_DIR = os.path.join(_C.PATH.DATA_DIR, "model", _C.EXP.NAME)
+_C.MODEL_DIR = os.path.join(_C.PATH.DATA_DIR, "model")
 
 
 # ---------------------------------------------------------------------------- #

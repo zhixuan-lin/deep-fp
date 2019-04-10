@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 if '.' not in sys.path:
     sys.path.insert(0, '.')
@@ -27,7 +28,7 @@ def test_net(cfg):
     
 
     # checkpoint directory
-    output_dir = cfg.MODEL_DIR
+    output_dir = os.path.join(cfg.MODEL_DIR, cfg.EXP.NAME)
     checkpointer = Checkpointer(model, save_dir=output_dir)
     
     # if we intend to resume, this loads model, optimizer, scheduler, and arguments
@@ -38,7 +39,10 @@ def test_net(cfg):
     
     results = test(model, device, dataloader, evaluator)
     
-    print('Final accuracy: {:.3f}'.format(results))
+    if isinstance(results, float):
+        print('Final accuracy: {:.3f}'.format(results))
+    else:
+        print('Precision: {:.3f}\nRecall: {:.3f}'.format(results['precision'], results['recall']))
     
     return model
 

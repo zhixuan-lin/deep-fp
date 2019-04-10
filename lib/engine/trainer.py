@@ -50,6 +50,8 @@ def train(
             data_time = time.time() - end
             iteration = iteration + 1
             
+            global_step = (epoch - 1) * len(data_loader) + iteration
+            
             # iteration should be kept in the checkpointer
             # arguments['iteration'] = iteration
             
@@ -79,7 +81,7 @@ def train(
             meters.update(time=batch_time, data=data_time)
             
             # estimated seconds is number of iterations left / time per iteration
-            eta_seconds = meters.time.global_avg * (max_iter - iteration)
+            eta_seconds = meters.time.global_avg * (max_iter - global_step)
             eta_string = str(datetime.timedelta(seconds=int(eta_seconds)))
             
             if iteration % 20 == 0 or iteration == max_iter:
@@ -103,7 +105,6 @@ def train(
                     )
                 )
                 if not tensorboard is None:
-                    global_step = (epoch - 1) * len(data_loader) + iteration
                     
                     metric_dict = meters.state_dict()
                     tensorboard.update(**metric_dict)

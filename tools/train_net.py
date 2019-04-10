@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 if '.' not in sys.path:
     sys.path.insert(0, '.')
@@ -36,7 +37,10 @@ def train_net(cfg):
     arguments['epoch'] = 0
 
     # checkpoint directory
-    output_dir = cfg.MODEL_DIR
+    output_dir = os.path.join(cfg.MODEL_DIR, cfg.EXP.NAME)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
     # checkpoint every
     checkpointer = Checkpointer(model, optimizer, scheduler, cfg.TRAIN.NUM_CHECKPOINT, output_dir)
     
@@ -58,9 +62,13 @@ def train_net(cfg):
         evaluator = make_evaluator(cfg)
         
     tensorboard = None
+    
     if cfg.TENSORBOARD.IS_ON:
+        logdir = os.path.join(cfg.TENSORBOARD.LOG_DIR, cfg.EXP.NAME)
+        if not os.path.exists(logdir):
+            os.makedirs(logdir)
         tensorboard = TensorBoard(
-            logdir=cfg.TENSORBOARD.LOG_DIR,
+            logdir=logdir,
             scalars=cfg.TENSORBOARD.TARGETS.SCALAR,
             images=cfg.TENSORBOARD.TARGETS.IMAGE,
             resume=cfg.TRAIN.RESUME
