@@ -38,7 +38,7 @@ def test_net(cfg):
     
     results = test(model, device, dataloader, evaluator)
     
-    print(results)
+    print('Final accuracy: {:.3f}'.format(results))
     
     return model
 

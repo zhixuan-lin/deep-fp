@@ -1,4 +1,5 @@
 import torch
+from tqdm import tqdm
 
 def test(model, device, dataloader, evaluator):
     """
@@ -14,15 +15,13 @@ def test(model, device, dataloader, evaluator):
     
     model = model.to(device)
     model.eval()
-    i = 0
-    for (data, targets) in dataloader:
-        print(i)
+    pbar = tqdm(dataloader)
+    for (data, targets) in pbar:
         data = data.to(device)
         targets = targets.to(device)
         results = model(data)
         evaluator.evaluate(data, targets, results)
-        print(i)
-        i+=1
+        pbar.set_description('Acc: {:.3f}'.format(evaluator.results()))
         
     return evaluator.results()
     

@@ -14,7 +14,7 @@ MODEL:
 DATASET:
   TRAIN: "OpenWorldNoDef.train"
   VAL: "OpenWorldNoDef.val"
-  TEST: "OpenWorldNoDef.test_mon"
+  TEST: "OpenWorldNoDef.test_unmon"
 
 TRAIN:
   RESUME: True

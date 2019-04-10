@@ -1,6 +1,6 @@
 EXP:
   # this will be used for logging and model saving
-  NAME: "OpenWorldNoDef"
+  NAME: "ClosedWorldNoDef"
 
 MODEL:
   NAME: "dfnet"
@@ -12,9 +12,9 @@ MODEL:
   PARALLEL: True
 
 DATASET:
-  TRAIN: "OpenWorldNoDef.train"
-  VAL: "OpenWorldNoDef.val"
-  TEST: "OpenWorldNoDef.test_mon"
+  TRAIN: "ClosedWorldNoDef.train"
+  VAL: "ClosedWorldNoDef.val"
+  TEST: "ClosedWorldNoDef.test"
 
 TRAIN:
   RESUME: True

@@ -1,6 +1,6 @@
 EXP:
   # this will be used for logging and model saving
-  NAME: "OpenWorldNoDef"
+  NAME: "OpenWorldWTFPAD"
 
 MODEL:
   NAME: "dfnet"
@@ -12,9 +12,9 @@ MODEL:
   PARALLEL: True
 
 DATASET:
-  TRAIN: "OpenWorldNoDef.train"
-  VAL: "OpenWorldNoDef.val"
-  TEST: "OpenWorldNoDef.test_mon"
+  TRAIN: "OpenWorldWTFPAD.train"
+  VAL: "OpenWorldWTFPAD.val"
+  TEST: "OpenWorldWTFPAD.test_mon"
 
 TRAIN:
   RESUME: True

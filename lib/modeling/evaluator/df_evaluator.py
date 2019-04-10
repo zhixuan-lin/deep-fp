@@ -25,4 +25,4 @@ class DFEvaluator:
         self.total = 0
     
     def results(self):
-        return self.correct / self.total
+        return self.correct / self.total if self.total else 0
