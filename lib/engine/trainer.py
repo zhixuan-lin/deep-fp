@@ -18,6 +18,7 @@ def train(
     checkpoint_period,
     max_epochs,
     arguments,
+    tensorboard,
     
     dataloader_val=None,
     evaluator=None
@@ -34,12 +35,12 @@ def train(
 
     first = True
     for epoch in range(start_epoch, max_epochs):
-        arguments['epoch'] = epoch
+        epoch = epoch + 1
         model.train()
         
         # starting from where we drop
-        enumerator = enumerate(data_loader, start_iter if first else 0)
-        for iteration, (data, targets) in enumerator:
+        # enumerator = enumerate(data_loader, start_iter if first else 0)
+        for iteration, (data, targets) in enumerate(data_loader):
             # this is necessary for ensure the right number of epochs
             if iteration >= max_iter:
                 break
@@ -50,7 +51,7 @@ def train(
             iteration = iteration + 1
             
             # iteration should be kept in the checkpointer
-            arguments['iteration'] = iteration
+            # arguments['iteration'] = iteration
             
             # step learning rate scheduler
             if scheduler:
@@ -101,16 +102,27 @@ def train(
                         # memory=torch.cuda.max_memory_allocated() / 1024.0 / 1024.0
                     )
                 )
+                if not tensorboard is None:
+                    global_step = (epoch - 1) * len(data_loader) + iteration
+                    
+                    metric_dict = meters.state_dict()
+                    tensorboard.update(**metric_dict)
+                    tensorboard.add('train', global_step)
+
                 
             # save model, optimizer, scheduler, and other arguments
-            if iteration % checkpoint_period == 0:
-                checkpointer.save("model_{:05d}_{:07d}".format(epoch, iteration), **arguments)
-                
+            # global_step = epoch * len(data_loader) + iteration
+        # if global_step % checkpoint_period == 0:
+        # save model after each epoch
+        arguments['epoch'] = epoch
+        checkpointer.save("model_{:04d}".format(epoch), **arguments)
+        # checkpointer.save("model_{:05d}_{:07d}".format(epoch, iteration), **arguments)
+        
         # evaluate result after each epoch
         if not evaluator is None and not dataloader_val is None:
             results = test(model, device, dataloader_val, evaluator)
-            print(**results)
-            
+            print('Final accuracy: {}'.format(results))
+            tensorboard.update(accuracy=results)
             
             
     total_training_time = time.time() - start_training_time

@@ -13,11 +13,13 @@ class Checkpointer:
             model,
             optimizer=None,
             scheduler=None,
+            num_checkpoints=10,
             save_dir="",
     ):
         self.model = model
         self.optimizer = optimizer
         self.scheduler = scheduler
+        self.num_checkpoints = num_checkpoints
         self.save_dir = save_dir
         
     def save(self, name, **kargs):
@@ -31,13 +33,15 @@ class Checkpointer:
         data = {}
         data['model'] = self.model.state_dict()
         if self.optimizer is not None:
-            data['optimizer'] = self.optimizer
+            data['optimizer'] = self.optimizer.state_dict()
         if self.scheduler is not None:
-            data['scheduler'] = self.scheduler
+            data['scheduler'] = self.scheduler.state_dict()
         # save any other arguments
         data.update(kargs)
         
         save_file = os.path.join(self.save_dir, '{}.pth'.format(name))
+        
+        print('Saving checkpoint to {}'.format(save_file))
         torch.save(data, save_file)
         self.update_checkpoint(save_file)
     
@@ -76,6 +80,9 @@ class Checkpointer:
         save_file = os.path.join(self.save_dir, 'checkpoint.pkl')
         checkpoints = pickle.load(open(save_file, 'rb'))
         last_saved = os.path.join(self.save_dir, checkpoints[-1])
+        
+        return last_saved
+        
     
     def update_checkpoint(self, last_filename):
         save_file = os.path.join(self.save_dir, 'checkpoint.pkl')
@@ -85,7 +92,7 @@ class Checkpointer:
             checkpoints = []
             
         checkpoints.append(os.path.basename(last_filename))
-        if len(checkpoints) > self.cfg.TRAIN.NUM_CHECKPOINT:
+        if len(checkpoints) > self.num_checkpoints:
             checkpoint_name = checkpoints.pop(0)
             checkpoint = os.path.join(self.save_dir, checkpoint_name)
             if os.path.exists(checkpoint) and checkpoint_name not in checkpoints:
@@ -96,7 +103,7 @@ class Checkpointer:
         return torch.load(f, map_location=torch.device('cpu'))
     
     def _load_model(self, checkpoint):
-        torch.load_state_dict(self.model, checkpoint.pop('model'))
+        self.model.load_state_dict(checkpoint.pop('model'))
         
     
         

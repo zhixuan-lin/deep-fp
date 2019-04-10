@@ -6,7 +6,7 @@ MODEL:
   NAME: "dfnet"
   # test model?
   TEST: False
-  CLASSES: 96
+  CLASSES: 95
   DEVICE: "cuda"
   # use multiple gpus?
   PARALLEL: True
@@ -19,15 +19,19 @@ DATASET:
 TRAIN:
   RESUME: True
   MAX_EPOCHS: 30
-  BATCH_SIZE: 64
+  BATCH_SIZE: 128
   # checkpoint every ? iterations
-  CHECKPOINT_PERIOD: 2500
+  CHECKPOINT_PERIOD: 500
+
+TENSORBOARD:
+  IS_ON: True
+  TARGETS:
+    SCALAR: ["loss", "accuracy"]
 
 VAL:
   IS_ON: True
-  BATCH_SIZE: 1
+  BATCH_SIZE: 128
 
 TEST:
-  BATCH_SIZE: 1
+  BATCH_SIZE: 128
 
-MODEL_DIR: "data/model"

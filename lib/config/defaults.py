@@ -68,7 +68,7 @@ _C.TRAIN.MAX_EPOCHS = 30
 _C.TRAIN.BATCH_SIZE = 128
 
 # use Adam as default
-_C.TRAIN.BASE_LR = 0.001
+_C.TRAIN.BASE_LR = 0.002
 _C.TRAIN.WEIGHT_DECAY = 0.0005
 
 # scheduler, use MultiStepLR as default
@@ -97,12 +97,12 @@ _C.TEST.BATCH_SIZE = 1
 # ---------------------------------------------------------------------------- #
 # Tensorboard
 # ---------------------------------------------------------------------------- #
-# _C.TENSORBOARD = CN()
-# _C.TENSORBOARD.IS_ON = True
-# _C.TENSORBOARD.TARGETS = CN()
-# _C.TENSORBOARD.TARGETS.SCALAR = ["loss"]
-# _C.TENSORBOARD.TARGETS.IMAGE = []
-# _C.TENSORBOARD.LOG_DIR = os.path.join(_C.PATH.ROOT_DIR, "logs")
+_C.TENSORBOARD = CN()
+_C.TENSORBOARD.IS_ON = True
+_C.TENSORBOARD.TARGETS = CN()
+_C.TENSORBOARD.TARGETS.SCALAR = ["loss", "accuracy"]
+_C.TENSORBOARD.TARGETS.IMAGE = []
+_C.TENSORBOARD.LOG_DIR = os.path.join(_C.PATH.ROOT_DIR, "logs", _C.EXP.NAME)
 
 
 # ---------------------------------------------------------------------------- #
@@ -123,3 +123,4 @@ if _C.PATH.ROOT_DIR not in sys.path:
     
 if not os.path.exists(_C.MODEL_DIR):
     os.makedirs(_C.MODEL_DIR)
+    

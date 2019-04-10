@@ -6,10 +6,11 @@ if '.' not in sys.path:
 import torch
 from lib.data.build import make_dataloader
 from lib.engine.trainer import train
-from lib.modeling.build import make_model
+from lib.modeling.build import make_model, make_evaluator
 from lib.solver.build import make_optimizer, make_scheduler
 from lib.utils.checkpoint import Checkpointer
 from lib.config import cfg
+from lib.utils.tensorboard import TensorBoard
 
 def train_net(cfg):
     # get device
@@ -36,25 +37,35 @@ def train_net(cfg):
 
     # checkpoint directory
     output_dir = cfg.MODEL_DIR
-    checkpointer = Checkpointer(model, optimizer, scheduler, output_dir)
+    # checkpoint every
+    checkpointer = Checkpointer(model, optimizer, scheduler, cfg.TRAIN.NUM_CHECKPOINT, output_dir)
     
     # if we intend to resume, this loads model, optimizer, scheduler, and arguments
     if cfg.TRAIN.RESUME:
         arguments_checkpoint = checkpointer.load()
         arguments.update(arguments_checkpoint)
     
-    # checkpoint every
-    checkpoint_period = cfg.TRAIN.CHECKPOINT_PERIOD
     
     # max epochs
     max_epochs = cfg.TRAIN.MAX_EPOCHS
-    
+
+    checkpoint_period = cfg.TRAIN.CHECKPOINT_PERIOD
     # validation settings
     dataloader_val = None
     evaluator = None
     if cfg.VAL.IS_ON:
         dataloader_val = make_dataloader(cfg, mode='val')
-    
+        evaluator = make_evaluator(cfg)
+        
+    tensorboard = None
+    if cfg.TENSORBOARD.IS_ON:
+        tensorboard = TensorBoard(
+            logdir=cfg.TENSORBOARD.LOG_DIR,
+            scalars=cfg.TENSORBOARD.TARGETS.SCALAR,
+            images=cfg.TENSORBOARD.TARGETS.IMAGE,
+            resume=cfg.TRAIN.RESUME
+        )
+
     train(
         model,
         dataloader,
@@ -64,7 +75,11 @@ def train_net(cfg):
         device,
         checkpoint_period,
         max_epochs,
-        arguments
+        arguments,
+        tensorboard,
+        
+        dataloader_val=dataloader_val,
+        evaluator=evaluator
     )
     
     return model
