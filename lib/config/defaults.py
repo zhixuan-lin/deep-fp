@@ -76,7 +76,7 @@ _C.TRAIN.MILESTONES = [10000, 40000, 80000]
 _C.TRAIN.GAMMA = 0.1
 
 _C.TRAIN.CHECKPOINT_PERIOD = 2500
-_C.TRAIN.NUM_CHECKPOINT = 10
+_C.TRAIN.NUM_CHECKPOINT = 3
 
 # ---------------------------------------------------------------------------- #
 # Validation settings

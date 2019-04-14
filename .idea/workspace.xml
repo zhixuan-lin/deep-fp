@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ba6c9ad-f8ca-458e-a75c-5724ed1a8797" name="Default Changelist" comment="">
+    <list default="true" id="4ba6c9ad-f8ca-458e-a75c-5724ed1a8797" name="Default Changelist" comment="k">
+      <change afterPath="$PROJECT_DIR$/configs/autoencoder_simple.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/lstm-2.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/lstm.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/modeling/autoencoder/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/modeling/autoencoder/df_autoencoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/modeling/backbone/lstm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/config/defaults.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/config/defaults.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/engine/eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/engine/eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/engine/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/engine/trainer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/modeling/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modeling/build.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modeling/evaluator/df_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modeling/evaluator/df_evaluator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/test_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/test_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/train_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/train_net.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,9 +40,10 @@
     <session id="-1273357835">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="3" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -50,35 +51,35 @@
           <entry key="gitignore" value="4" />
           <entry key="hi" value="3" />
           <entry key="md" value="12" />
-          <entry key="py" value="228" />
+          <entry key="py" value="367" />
           <entry key="txt" value="4" />
-          <entry key="yaml" value="255" />
+          <entry key="yaml" value="335" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="12" />
           <entry key="PLAIN_TEXT" value="11" />
-          <entry key="Python" value="228" />
-          <entry key="YAML" value="255" />
+          <entry key="Python" value="367" />
+          <entry key="YAML" value="335" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="12" />
           <entry key="dummy" value="30" />
-          <entry key="md" value="639" />
-          <entry key="py" value="28997" />
-          <entry key="txt" value="8" />
-          <entry key="yaml" value="1278" />
+          <entry key="md" value="684" />
+          <entry key="py" value="35106" />
+          <entry key="txt" value="9" />
+          <entry key="yaml" value="2003" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="639" />
-          <entry key="PLAIN_TEXT" value="38" />
-          <entry key="Python" value="29009" />
-          <entry key="YAML" value="1278" />
+          <entry key="Markdown" value="684" />
+          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="Python" value="35118" />
+          <entry key="YAML" value="2003" />
         </counts>
       </usages-collector>
     </session>
@@ -86,13 +87,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/notes.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="598">
-                <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/lib/modeling/backbone/lstm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1378">
+              <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -156,7 +154,6 @@
         <option value="$PROJECT_DIR$/lib/modeling/classifier/dfnet.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/run.py" />
-        <option value="$PROJECT_DIR$/lib/data/datasets/df_dataset.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/lib/config/paths.py" />
         <option value="$PROJECT_DIR$/lib/utils/checkpoint.py" />
@@ -172,14 +169,21 @@
         <option value="$PROJECT_DIR$/configs/openworld-walkie-talkie-unmon.yaml" />
         <option value="$PROJECT_DIR$/configs/openworld-wtfpad.yaml" />
         <option value="$PROJECT_DIR$/configs/openworld-wtfpad-unmon.yaml" />
-        <option value="$PROJECT_DIR$/lib/config/defaults.py" />
-        <option value="$PROJECT_DIR$/lib/modeling/build.py" />
         <option value="$PROJECT_DIR$/tools/test_net.py" />
         <option value="$PROJECT_DIR$/lib/engine/eval.py" />
         <option value="$PROJECT_DIR$/configs/openworld-nodef-unmon.yaml" />
         <option value="$PROJECT_DIR$/configs/closedworld-nodef.yaml" />
         <option value="$PROJECT_DIR$/lib/modeling/evaluator/df_evaluator.py" />
         <option value="$PROJECT_DIR$/notes.md" />
+        <option value="$PROJECT_DIR$/lib/modeling/backbone/df_autoencoder.py" />
+        <option value="$PROJECT_DIR$/configs/autoencoder_simple.yaml" />
+        <option value="$PROJECT_DIR$/lib/modeling/autoencoder/df_autoencoder.py" />
+        <option value="$PROJECT_DIR$/lib/config/defaults.py" />
+        <option value="$PROJECT_DIR$/configs/lstm.yaml" />
+        <option value="$PROJECT_DIR$/lib/data/datasets/df_dataset.py" />
+        <option value="$PROJECT_DIR$/lib/modeling/backbone/lstm.py" />
+        <option value="$PROJECT_DIR$/lib/modeling/build.py" />
+        <option value="$PROJECT_DIR$/configs/lstm-2.yaml" />
       </list>
     </option>
   </component>
@@ -232,13 +236,24 @@
               <item name="deep-fp" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="modeling" type="462c0819:PsiDirectoryNode" />
-              <item name="evaluator" type="462c0819:PsiDirectoryNode" />
+              <item name="backbone" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="deep-fp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="deep-fp" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="solver" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="deep-fp" type="b2602c69:ProjectViewProjectNode" />
               <item name="deep-fp" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="deep-fp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="deep-fp" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -248,7 +263,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="eva&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/evaluator/df_evaluator.py&#10;PR&#9;null&#9;null&#10;test&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/test_net.py&#10;de&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/config/defaults.py&#10;build&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/build.py&#10;defa&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/config/defaults.py&#10;tra&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;Metr&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/metric_logger.py&#10;chec&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/checkpoint.py&#10;check&#9;ACTION&#9;CheckinProject&#10;che&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/checkpoint.py&#10;optim&#9;null&#9;null&#10;run&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/run.py&#10;trane&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;te&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/test_net.py&#10;e&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/engine/eval.py&#10;df&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/evaluator/df_evaluator.py&#10;dfne&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/classifier/dfnet.py&#10;DF&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/evaluator/df_evaluator.py&#10;yaml&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/configs/openworld-nodef.yaml&#10;train&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;ev&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/engine/eval.py&#10;fac&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/factory.py&#10;Metri&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/metric_logger.py&#10;meter&#9;null&#9;null&#10;df.py&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df.py&#10;df.p&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df.py&#10;data/buil&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/build.py&#10;solver/buil&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/solver/build.py&#10;classifi&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/classifier&#10;trai&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;do_train&#9;null&#9;null&#10;df.&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df.py&#10;fa&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/factory.py&#10;pa&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/config/paths.py" />
+    <property name="SearchEverywhereHistoryKey" value="build&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/build.py&#10;lst&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/configs/lstm-2.yaml&#10;buil&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/build.py&#10;Fron&#9;null&#9;null&#10;ls&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/backbone/lstm.py&#10;df&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df_dataset.py&#10;lstm&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/configs/lstm-2.yaml&#10;bui&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/build.py&#10;bu&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/build.py&#10;b&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/build.py&#10;dfne&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/backbone/dfnet.py&#10;Lst&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/backbone/lstm.py&#10;defa&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/config/defaults.py&#10;buid&#9;null&#9;null&#10;bulid&#9;null&#9;null&#10;data&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df_dataset.py&#10;df_data&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df_dataset.py&#10;tra&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;eva&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/evaluator/df_evaluator.py&#10;PR&#9;null&#9;null&#10;test&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/test_net.py&#10;de&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/config/defaults.py&#10;Metr&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/metric_logger.py&#10;chec&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/checkpoint.py&#10;check&#9;ACTION&#9;CheckinProject&#10;che&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/checkpoint.py&#10;optim&#9;null&#9;null&#10;run&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/run.py&#10;trane&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;te&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/test_net.py&#10;e&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/engine/eval.py&#10;DF&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/evaluator/df_evaluator.py&#10;yaml&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/configs/openworld-nodef.yaml&#10;train&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;ev&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/engine/eval.py&#10;fac&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/factory.py&#10;Metri&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/utils/metric_logger.py&#10;meter&#9;null&#9;null&#10;df.py&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df.py&#10;df.p&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df.py&#10;data/buil&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/build.py&#10;solver/buil&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/solver/build.py&#10;classifi&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/modeling/classifier&#10;trai&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/tools/train_net.py&#10;do_train&#9;null&#9;null&#10;df.&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/datasets/df.py&#10;fa&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/data/factory.py&#10;pa&#9;FILE&#9;file:///Users/lin/Documents/Courses/NS/Project/deep-fp/lib/config/paths.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -261,14 +276,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/modeling/backbone" />
-      <recent name="$PROJECT_DIR$/lib/data" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/configs" />
       <recent name="$PROJECT_DIR$/tools" />
       <recent name="$PROJECT_DIR$/lib/config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/modeling/autoencoder" />
+      <recent name="$PROJECT_DIR$/lib/modeling/backbone" />
+      <recent name="$PROJECT_DIR$/lib/data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -352,13 +368,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27672035" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="File Transfer" weight="0.3297587" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30891088" />
@@ -370,8 +385,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32944608" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.68230563" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3230563" />
       <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3297587" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -428,16 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/modeling/backbone/dfnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/df-pytorch/lib/python3.6/site-packages/caffe2/contrib/playground/meter.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -446,16 +452,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/modeling/evaluator/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/modeling/classifier/dfnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -467,26 +463,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/data/datasets/df_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1554882397618" expanded="true" signature="676:717" ph="..." />
-            <marker date="1554882397618" expanded="true" signature="735:744" ph="..." />
-            <marker date="1554882397618" expanded="true" signature="1433:1438" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -504,10 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1554034978823" expanded="true" signature="152:156" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -520,16 +496,6 @@
     </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/df-pytorch/lib/python3.6/site-packages/caffe2/python/optimizer.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/solver/build.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding>
-            <marker date="1553861537636" expanded="true" signature="62:242" ph="..." />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/utils/checkpoint.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -578,53 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/engine/trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="83" column="73" selection-start-line="83" selection-start-column="73" selection-end-line="83" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/train_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="61" column="18" lean-forward="true" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1554899754124" expanded="true" signature="527:866" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/config/defaults.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#91#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/modeling/build.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/test_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/engine/eval.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
@@ -657,24 +576,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/openworld-walkie-talkie.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/configs/openworld-nodef-unmon.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/openworld-nodef.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-164">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -685,23 +590,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/closedworld-walkie-talkie.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/closedworld-nodef.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+    <entry file="file://$PROJECT_DIR$/notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="351">
+            <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/modeling/evaluator/df_evaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
+        <state relative-caret-position="694">
           <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
@@ -710,16 +614,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/lib/engine/trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/test_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/train_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1554899754124" expanded="true" signature="527:866" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/autoencoder_simple.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/modeling/backbone/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/notes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="598">
-            <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/lib/modeling/autoencoder/df_autoencoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/lstm-1.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/openworld-nodef.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/df-pytorch/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="301" column="6" selection-start-line="301" selection-start-column="6" selection-end-line="301" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/config/defaults.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#91#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/solver/build.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding>
+            <marker date="1553861537636" expanded="true" signature="62:242" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/data/datasets/df_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+            <marker date="1555161617621" expanded="true" signature="699:740" ph="..." />
+            <marker date="1555161617621" expanded="true" signature="758:767" ph="..." />
+            <marker date="1555161617621" expanded="true" signature="1456:1461" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/modeling/classifier/dfnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/lstm.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/openworld-walkie-talkie.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/modeling/build.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/lstm-2.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/closedworld-nodef.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="694">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/closedworld-walkie-talkie.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/modeling/backbone/dfnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/modeling/backbone/lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1378">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
         </state>
       </provider>
     </entry>
