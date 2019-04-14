@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+from sklearn.metrics import precision_recall_curve
 
 class DFEvaluator:
     def __init__(self):
@@ -24,7 +25,7 @@ class DFEvaluator:
         self.correct = 0
         self.total = 0
     
-    def results(self):
+    def results(self, final=False):
         return self.correct / self.total if self.total else 0
     
 class PREvaluator:
@@ -47,19 +48,25 @@ class PREvaluator:
         
         with torch.no_grad():
             # (B, ), predicted class
+            B = targets.size(0)
             predicted = torch.argmax(results, dim=1)
-            y_score = results[:, predicted]
+            y_score = results[torch.arange(B), predicted]
             # change unmonitored to 0, (B, )
             y_score[predicted == (self.num_class - 1)] = 0.0
             # (B, )
             y_truth = targets != (self.num_class - 1)
+            # print(y_truth.size(), y_score.size())
             
-            self.y_score = np.hstack([self.y_score, y_score])
-            self.y_truth = np.hstack([self.y_truth, y_truth])
+            self.y_score = np.hstack([self.y_score, y_score.cpu().numpy()])
+            self.y_truth = np.hstack([self.y_truth, y_truth.cpu().numpy()])
             
-    def results(self):
-        return {
-            'precision': self.tp / (self.tp + self.fp) if self.tp + self.fp else 0,
-            'recall': self.tp / (self.tp + self.fn) if self.tp + self.fn else 0
-        }
-        
+    def results(self, final=False):
+        """
+        :return:
+            precision: (N+1,)
+            recall: (N+1,)
+            threshold: (N+1,)
+        """
+        if final:
+            return precision_recall_curve(self.y_truth, self.y_score)
+    

@@ -1,9 +1,9 @@
 EXP:
   # this will be used for logging and model saving
-  NAME: "OpenWorldNoDef"
+  NAME: "OpenWorldNoDef-lstm"
 
 MODEL:
-  NAME: "dfnet"
+  NAME: "lstm"
   # test model?
   TEST: False
   CLASSES: 96

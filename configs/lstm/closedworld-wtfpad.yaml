@@ -1,20 +1,20 @@
 EXP:
   # this will be used for logging and model saving
-  NAME: "OpenWorldWTFPAD"
+  NAME: "ClosedWorldWTFPAD-lstm"
 
 MODEL:
-  NAME: "dfnet"
+  NAME: "lstm"
   # test model?
   TEST: False
-  CLASSES: 96
+  CLASSES: 95
   DEVICE: "cuda"
   # use multiple gpus?
   PARALLEL: True
 
 DATASET:
-  TRAIN: "OpenWorldWTFPAD.train"
-  VAL: "OpenWorldWTFPAD.val"
-  TEST: "OpenWorldWTFPAD.test_unmon"
+  TRAIN: "ClosedWorldWTFPAD.train"
+  VAL: "ClosedWorldWTFPAD.val"
+  TEST: "ClosedWorldWTFPAD.test"
 
 TRAIN:
   RESUME: True

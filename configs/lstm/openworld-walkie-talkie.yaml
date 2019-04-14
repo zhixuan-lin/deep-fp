@@ -1,20 +1,20 @@
 EXP:
   # this will be used for logging and model saving
-  NAME: "OpenWorldNoDef"
+  NAME: "OpenWorldWalkieTalkie-lstm"
 
 MODEL:
-  NAME: "dfnet"
+  NAME: "lstm"
   # test model?
   TEST: False
-  CLASSES: 96
+  CLASSES: 101
   DEVICE: "cuda"
   # use multiple gpus?
   PARALLEL: True
 
 DATASET:
-  TRAIN: "OpenWorldNoDef.train"
-  VAL: "OpenWorldNoDef.val"
-  TEST: "OpenWorldNoDef.test_unmon"
+  TRAIN: "OpenWorldWalkieTalkie.train"
+  VAL: "OpenWorldWalkieTalkie.val"
+  TEST: "OpenWorldWalkieTalkie.test"
 
 TRAIN:
   RESUME: True

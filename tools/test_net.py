@@ -42,7 +42,14 @@ def test_net(cfg):
     if isinstance(results, float):
         print('Final accuracy: {:.3f}'.format(results))
     else:
-        print('Precision: {:.3f}\nRecall: {:.3f}'.format(results['precision'], results['recall']))
+        # matplotlib precision recall curve
+        import matplotlib.pyplot as plt
+        precision, recall, threshold = results
+        plt.plot(precision, recall)
+        plt.xlim([0.0, 1.0])
+        plt.ylim([0.0, 1.0])
+        plt.show()
+        
     
     return model
 

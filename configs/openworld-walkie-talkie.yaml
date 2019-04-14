@@ -14,7 +14,7 @@ MODEL:
 DATASET:
   TRAIN: "OpenWorldWalkieTalkie.train"
   VAL: "OpenWorldWalkieTalkie.val"
-  TEST: "OpenWorldWalkieTalkie.test_mon"
+  TEST: "OpenWorldWalkieTalkie.test"
 
 TRAIN:
   RESUME: True

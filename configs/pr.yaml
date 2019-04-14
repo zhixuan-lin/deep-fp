@@ -14,7 +14,7 @@ MODEL:
 DATASET:
   TRAIN: "OpenWorldWalkieTalkie.train"
   VAL: "OpenWorldWalkieTalkie.val"
-  TEST: "OpenWorldWalkieTalkie.test_unmon"
+  TEST: "OpenWorldWalkieTalkie.test"
 
 TRAIN:
   RESUME: True
@@ -34,3 +34,4 @@ VAL:
 
 TEST:
   BATCH_SIZE: 128
+  METRIC: 'PR'

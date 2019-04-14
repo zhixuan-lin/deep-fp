@@ -24,10 +24,8 @@ def test(model, device, dataloader, evaluator):
         results = evaluator.results()
         if isinstance(results, float):
             pbar.set_description('Acc: {:.3f}'.format(evaluator.results()))
-        else:
-            pbar.set_description('prec: {:.3f}, recall: {:.3f}'.format(results['precision'], results['recall']))
             
         
-    return evaluator.results()
+    return evaluator.results(final=True)
     
     

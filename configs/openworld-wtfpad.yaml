@@ -14,7 +14,7 @@ MODEL:
 DATASET:
   TRAIN: "OpenWorldWTFPAD.train"
   VAL: "OpenWorldWTFPAD.val"
-  TEST: "OpenWorldWTFPAD.test_mon"
+  TEST: "OpenWorldWTFPAD.test"
 
 TRAIN:
   RESUME: True
