@@ -34,4 +34,5 @@ VAL:
 
 TEST:
   BATCH_SIZE: 128
+  METRIC: 'PR'
 

@@ -86,6 +86,7 @@ _C.VAL = CN()
 # resume training?
 _C.VAL.IS_ON = True
 _C.VAL.BATCH_SIZE = 1
+_C.VAL.METRIC = 'ACC'
 
 # ---------------------------------------------------------------------------- #
 # Specific test options

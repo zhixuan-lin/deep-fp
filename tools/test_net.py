@@ -35,7 +35,7 @@ def test_net(cfg):
     checkpointer.load()
     
     # build evaluator
-    evaluator = make_evaluator(cfg)
+    evaluator = make_evaluator(cfg, 'test')
     
     results = test(model, device, dataloader, evaluator)
     
@@ -45,7 +45,7 @@ def test_net(cfg):
         # matplotlib precision recall curve
         import matplotlib.pyplot as plt
         precision, recall, threshold = results
-        plt.plot(precision, recall)
+        plt.plot(recall, precision)
         plt.xlim([0.0, 1.0])
         plt.ylim([0.0, 1.0])
         plt.show()

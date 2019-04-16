@@ -18,10 +18,23 @@
 
 # Accuracy
 
-* OpenWorldNoDef: 0.957
-* OpenWorldWalkieTalkie: 0.631
-* OpenWorldWTFPAD: 0.810
+
+Reproduce
 
 * ClosedWorldNoDef: 0.971
 * ClosedWorldWalkieTalkie: 0.492
 * ClosedWorldWTFPAD: 0.855
+
+* OpenWorldNoDef: 0.956
+* OpenWorldWalkieTalkie: 0.382
+* OpenWorldWTFPAD: 0.828
+
+LSTM
+
+* ClosedWorldNoDef: 0.959
+* ClosedWorldWalkieTalkie: 0.487
+* ClosedWorldWTFPAD: 0.782
+
+* OpenWorldNoDef: 0.929
+* OpenWorldWalkieTalkie: 0.690
+* OpenWorldWTFPAD: 0.763

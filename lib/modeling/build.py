@@ -27,9 +27,10 @@ def make_backbone(cfg):
         )
         return LstmNet(**args)
 
-def make_evaluator(cfg):
-    if cfg.TEST.METRIC == 'ACC':
+def make_evaluator(cfg, mode):
+    metric = {'val': cfg.VAL.METRIC, 'test': cfg.TEST.METRIC}[mode]
+    if metric == 'ACC':
         return DFEvaluator()
-    elif cfg.TEST.METRIC == 'PR':
+    elif metric == 'PR':
         return PREvaluator(cfg.MODEL.CLASSES)
     

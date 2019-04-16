@@ -59,7 +59,7 @@ def train_net(cfg):
     evaluator = None
     if cfg.VAL.IS_ON:
         dataloader_val = make_dataloader(cfg, mode='val')
-        evaluator = make_evaluator(cfg)
+        evaluator = make_evaluator(cfg, 'val')
         
     tensorboard = None
     
