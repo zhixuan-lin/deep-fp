@@ -1,6 +1,6 @@
-# deep-fp
+# Deep Webstie Fingerprinting
 
-Website fingerprinting based on CNN
+This is a Pytorch implementation of [Deep Fingerprinting: Undermining Website Fingerprinting Defenses with Deep Learning. Website fingerprinting based on CNN](https://arxiv.org/abs/1801.02265). This is for one of my course projects.
 
 Run training:
 
